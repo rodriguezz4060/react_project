@@ -10,17 +10,3 @@
   grid-gap: 10px;
 }
 
-.header {
-  grid-area: header;
-  background-color: dimgray;
-}
-
-.nav {
-  grid-area: nav;
-  background-color: darkslategrey;
-}
-
-.content {
-  grid-area: content;
-  background-color: papayawhip;
-}
