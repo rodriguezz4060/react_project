@@ -4,8 +4,8 @@ import Post from './Post/Post';
 
 const MyPost = () => {
     return (
-        <div>
-            My post
+        <div className={stl.postBlock}>
+            <h3>My post</h3>
             <div>
                 <textarea></textarea>
                 <div>

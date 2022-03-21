@@ -2,6 +2,10 @@
   color: blue;
 }
 
+.postBlock {
+  padding: 5px;
+}
+
 .posts {
   padding: 5px;
 }

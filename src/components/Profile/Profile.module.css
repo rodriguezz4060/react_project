@@ -2,22 +2,6 @@
     background-color: aliceblue;
 }
 
-.profileWallpeper img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    object-position: 0 50%;
-}
-
-.description {
-    padding: 5px;
-}
-
 .myPosts {
     padding: 5px;
-
-}
-
-.posts {
-
 }
