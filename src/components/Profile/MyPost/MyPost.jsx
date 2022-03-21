@@ -8,7 +8,9 @@ const MyPost = () => {
             My post
             <div>
                 <textarea></textarea>
-                <button>Add Post</button>
+                <div>
+                    <button>Add Post</button>
+                </div>
             </div>
             <div className={stl.posts}>
                 <Post messages='How are you dude' likeCount='15'/>

@@ -7,8 +7,9 @@
     display: grid;
     width: 1200px;
     grid-template-areas:
-  "header header"
-  "nav content";
+    "header header"
+    "nav content"
+    "footer footer";
     grid-template-rows: 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
@@ -16,4 +17,11 @@
 
 .app-wrapper-content {
     grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #3399bb;
+    color: #1f1e1e;
+    height: 30px;
 }

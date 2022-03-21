@@ -3,7 +3,9 @@ import stl from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
-    return <nav className={stl.nav}>
+    return (
+    <nav className={stl.nav}>
+        <div className={stl.navBar}>
         <div>
             <NavLink to="/profile" className={ navData => navData.isActive ? stl.active : stl.item }>Profile</NavLink>
         </div>
@@ -19,7 +21,9 @@ const Navbar = () => {
         <div>
             <NavLink to="/settings" className={ navData => navData.isActive ? stl.active : stl.item }>Settings</NavLink>
         </div>
+        </div>
     </nav>
+          )
 }
 
 export default Navbar;
