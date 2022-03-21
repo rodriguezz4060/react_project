@@ -13,8 +13,9 @@ import Settings from "./components/Settings/Settings";
 const App = (props) => {
     return (
         <BrowserRouter>
-            <div className='app-wrapper'>
+            <div className='wrappe'>
                 <Header/>
+            <div className='app-wrapper'>
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
@@ -25,6 +26,7 @@ const App = (props) => {
                         <Route path="/settings" element={<Settings/>}/>
                     </Routes>
                 </div>
+            </div>
             </div>
         </BrowserRouter>
     )
