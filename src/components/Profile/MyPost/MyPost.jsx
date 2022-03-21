@@ -3,6 +3,12 @@ import stl from './MyPost.module.css';
 import Post from './Post/Post';
 
 const MyPost = () => {
+
+    let postsData = [
+        {id:1, msg:'How are you dude', likeCount:12},
+        {id:2, msg:'Hi its my first post', likeCount:15},
+    ]
+
     return (
         <div className={stl.postBlock}>
             <h3>My post</h3>
@@ -13,8 +19,8 @@ const MyPost = () => {
                 </div>
             </div>
             <div className={stl.posts}>
-                <Post messages='How are you dude' likeCount='15'/>
-                <Post messages='Hi its my first post' likeCount='20'/>
+                <Post messages={postsData[0].msg} likeCount={postsData[0].likeCount}/>
+                <Post messages={postsData[1].msg} likeCount={postsData[1].likeCount}/>
             </div>
         </div>
     )

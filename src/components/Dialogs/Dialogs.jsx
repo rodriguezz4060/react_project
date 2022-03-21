@@ -14,18 +14,32 @@ const MessageFiends = (props) => {
 }
 
 const Dialogs = (props) => {
+
+    let dialogsData = [
+        {id:1, name:"Igor"},
+        {id:2, name:"Viktor"},
+        {id:3, name:"Sasha"},
+        {id:4, name:"Valera"}
+    ]
+
+    let messagesData = [
+        {id:1, msg:'Hi friend'},
+        {id:2, msg:'hi hi hi wasap'},
+        {id:3, msg:'props is nice'}
+    ]
+
     return (
         <div className={stl.dialogs}>
             <div className={stl.dialogsList}>
-                <DialogsFiends name="Igor" id="1"/>
-                <DialogsFiends name="Viktor" id="2"/>
-                <DialogsFiends name="Sasha" id="3"/>
-                <DialogsFiends name="Valera" id="4"/>
+                <DialogsFiends name={dialogsData[0].name} id={dialogsData[0].id}/>
+                <DialogsFiends name={dialogsData[1].name} id={dialogsData[1].id}/>
+                <DialogsFiends name={dialogsData[2].name} id={dialogsData[2].id}/>
+                <DialogsFiends name={dialogsData[3].name} id={dialogsData[3].id}/>
             </div>
             <div className={stl.messages}>
-                <MessageFiends msg="Hi friend"/>
-                <MessageFiends msg="hi hi hi wasap"/>
-                <MessageFiends msg="props is nice"/>
+                <MessageFiends msg={messagesData[0].msg}/>
+                <MessageFiends msg={messagesData[1].msg}/>
+                <MessageFiends msg={messagesData[2].msg}/>
             </div>
         </div>
     )
