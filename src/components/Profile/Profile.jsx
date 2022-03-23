@@ -5,7 +5,6 @@ import ProfileInfo from "./ProfileInfo/Profileinfo";
 
 const Profile = (props) => {
 
-
     return (
         <div className={stl.profileWrapper}>
             <ProfileInfo/>

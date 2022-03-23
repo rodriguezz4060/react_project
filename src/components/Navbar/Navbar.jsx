@@ -1,7 +1,6 @@
 import React from 'react';
 import stl from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
-import MyFriends from "./MyFriends/MyFriends";
 
 const Navbar = (props) => {
 
@@ -10,7 +9,8 @@ const Navbar = (props) => {
         </div>
     )
 
-    let UserAvatars = props.stateAvatar.Avatars.map(ava => <img src={ava.avtrUsr} />)
+    let UserAvatars = props.stateAvatar.Avatars.map(ava => <img src={ava.avtrUsr}/>)
+
 
     return (
         <nav className={stl.nav}>
@@ -23,7 +23,7 @@ const Navbar = (props) => {
                         My Friends
                     </div>
                     <div className={stl.avatar}>
-                    {UserAvatars}
+                        {UserAvatars}
                     </div>
                 </div>
             </div>
