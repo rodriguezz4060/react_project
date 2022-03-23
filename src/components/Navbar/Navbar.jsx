@@ -1,29 +1,34 @@
 import React from 'react';
 import stl from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
+import MyFriends from "./MyFriends/MyFriends";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    let Navigate = props.stateData.Navigation.map(nvg => <div>
+            <NavLink to={nvg.path} className={navData => navData.isActive ? stl.active : stl.item}>{nvg.name} </NavLink>
+        </div>
+    )
+
+    let UserAvatars = props.stateAvatar.Avatars.map(ava => <img src={ava.avtrUsr} />)
+
     return (
-    <nav className={stl.nav}>
-        <div className={stl.navBar}>
-        <div>
-            <NavLink to="/profile" className={ navData => navData.isActive ? stl.active : stl.item }>Profile</NavLink>
-        </div>
-        <div>
-            <NavLink to="/dialogs" className={ navData => navData.isActive ? stl.active : stl.item }>Messages</NavLink>
-        </div>
-        <div>
-            <NavLink to="/news" className={ navData => navData.isActive ? stl.active : stl.item }>News</NavLink>
-        </div>
-        <div>
-            <NavLink to="/music" className={ navData => navData.isActive ? stl.active : stl.item }>Music</NavLink>
-        </div>
-        <div>
-            <NavLink to="/settings" className={ navData => navData.isActive ? stl.active : stl.item }>Settings</NavLink>
-        </div>
-        </div>
-    </nav>
-          )
+        <nav className={stl.nav}>
+            <div>
+                <div className={stl.navBar}>
+                    {Navigate}
+                </div>
+                <div className={stl.navBar}>
+                    <div className={stl.titleFrends}>
+                        My Friends
+                    </div>
+                    <div className={stl.avatar}>
+                    {UserAvatars}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )
 }
 
 export default Navbar;

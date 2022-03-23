@@ -18,3 +18,22 @@
     color: cornflowerblue;
     text-decoration: none;
 }
+
+/*Блок друзья start*/
+
+.titleFrends {
+    padding: 5px;
+    font-weight: bold;
+}
+
+/*Блок друзья end*/
+
+.avatar img {
+    width: 40px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.avatar {
+    text-align: center;
+}

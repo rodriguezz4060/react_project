@@ -1,6 +1,6 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 9fr;
 }
 
 .dialogsList {
@@ -11,12 +11,9 @@
 
 }
 
-.dialogsList .active {
-    color: cornflowerblue;
-}
-
-.dialog {
-
+.dialogsList a {
+    color: #222222;
+    text-decoration: none;
 }
 
 .messages {
@@ -27,6 +24,75 @@
     background-color: cornsilk;
 }
 
-.message {
-
+.msgWindow {
+    border: 2px solid #222222;
+    padding: 5px;
+    background-color: whitesmoke;
 }
+/*Облочка сообщеий start*/
+
+.bubble {
+    width:450px;
+    float:right;
+    background-color:#000018;
+    color:#D8D8D8;
+    font-style:italic;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-position:top center;
+    background-repeat:no-repeat;
+    text-align: justify;
+    padding: 15px;
+    max-width: 60%;
+    margin: 0 0 5px 0;
+}
+
+.bubbleRight {
+    width:450px;
+    clear:both;
+    background-color:#304860;
+    color:#D8D8D8;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-position:top center;
+    background-repeat:no-repeat;
+    text-align: justify;
+    padding: 15px;
+    max-width: 60%;
+    margin: 0 0 5px 0;
+}
+
+/*Облочка сообщеий end*/
+
+/*Облочка пользователей start*/
+
+.bubbleUsers {
+    border-color: #cad8d0;
+    border-radius: 10px;
+    background: #cad8d0;
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.avatar img{
+    width: 50px;
+    border-radius: 30px;
+    float: left;
+    margin-right: 10px;
+}
+
+.bubbleUsers a {
+    display: block;
+}
+
+.bubbleUsersText {
+    vertical-align: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/*Облочка пользователей end*/

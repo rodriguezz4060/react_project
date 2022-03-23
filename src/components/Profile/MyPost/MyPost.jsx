@@ -2,12 +2,9 @@ import React from 'react';
 import stl from './MyPost.module.css';
 import Post from './Post/Post';
 
-const MyPost = () => {
+const MyPost = (props) => {
 
-    let postsData = [
-        {id:1, msg:'How are you dude', likeCount:12},
-        {id:2, msg:'Hi its my first post', likeCount:15},
-    ]
+    let postsElement = props.postsData.map ( p => <Post messages={p.msg} likeCount={p.likeCount}/> )
 
     return (
         <div className={stl.postBlock}>
@@ -19,8 +16,7 @@ const MyPost = () => {
                 </div>
             </div>
             <div className={stl.posts}>
-                <Post messages={postsData[0].msg} likeCount={postsData[0].likeCount}/>
-                <Post messages={postsData[1].msg} likeCount={postsData[1].likeCount}/>
+                { postsElement }
             </div>
         </div>
     )
