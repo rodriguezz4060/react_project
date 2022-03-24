@@ -10,7 +10,10 @@ const Profile = (props) => {
         <div className={stl.profileWrapper}>
             <ProfileInfo/>
             <div>
-                <MyPost postsData={props.stateData.postsData} addPost={props.addPost}/>
+                <MyPost postsData={props.stateData.postsData}
+                        addPost={props.addPost}
+                        NewPostText={props.stateData.NewPostText}
+                        updateNewPostText={props.updateNewPostText}/>
             </div>
         </div>
     )

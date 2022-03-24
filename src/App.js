@@ -58,10 +58,15 @@ const App = (props) => {
                             stateAvatar={props.state.avatarBase}/>
                         <div className='app-wrapper-content'>
                             <Routes>
-                                <Route path="/profile" element={<Profile
-                                    stateData={props.state.profilePage}
-                                    addPost={props.addPost}/>}/>
-                                <Route path="/dialogs/*" element={<Dialogs stateData={props.state.messagesPage}/>}/>
+                                <Route path="/profile"
+                                       element={<Profile
+                                           stateData={props.state.profilePage}
+                                           addPost={props.addPost}
+                                           updateNewPostText={props.updateNewPostText}
+                                       />}/>
+                                <Route path="/dialogs/*"
+                                       element={<Dialogs
+                                           stateData={props.state.messagesPage}/>}/>
                                 <Route path="/news"
                                        element={<News/>}/>
                                 <Route path="/music"
