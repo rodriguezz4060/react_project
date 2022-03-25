@@ -9,11 +9,17 @@ const Dialogs = (props) => {
         d => <DialogsFiends name={d.name} id={d.id}/>)
     let messagesElement = props.stateData.messagesData.map(m => <MessageFiends msg={m.msg}/>)
 
+    /*Добавление сообщений*/
+
     let newMessagesElement = React.createRef();
 
-    let addMessages = () =>{
+    let addMessages = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = () => {
         let text = newMessagesElement.current.value;
-        alert (text)
+        props.updateNewMessageText(text);
     }
 
     return (
@@ -26,7 +32,8 @@ const Dialogs = (props) => {
                     {messagesElement}
                 </div>
                 <div>
-                    <textarea ref={newMessagesElement}></textarea>
+                    <textarea onChange={onMessageChange} ref={newMessagesElement}
+                              value={props.stateData.NewMessageText}/>
                 </div>
                 <div>
                     <button onClick={addMessages}>Send</button>

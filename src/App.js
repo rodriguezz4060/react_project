@@ -66,7 +66,10 @@ const App = (props) => {
                                        />}/>
                                 <Route path="/dialogs/*"
                                        element={<Dialogs
-                                           stateData={props.state.messagesPage}/>}/>
+                                           stateData={props.state.messagesPage}
+                                           updateNewMessageText={props.updateNewMessageText}
+                                           addMessage={props.addMessage}
+                                       />}/>
                                 <Route path="/news"
                                        element={<News/>}/>
                                 <Route path="/music"
