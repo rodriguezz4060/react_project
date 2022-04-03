@@ -5,7 +5,7 @@ import ProfileInfo from "./ProfileInfo/Profileinfo";
 
 
 const Profile = (props) => {
-
+debugger;
     return (
         <div className={stl.profileWrapper}>
             <ProfileInfo/>

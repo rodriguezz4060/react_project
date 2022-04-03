@@ -8,8 +8,6 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {addPost} from "./Redux/store";
-
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -46,7 +44,7 @@ class ErrorBoundary extends React.Component {
 }
 
 const App = (props) => {
-
+debugger;
     return (
         <ErrorBoundary>
             <BrowserRouter>
@@ -54,8 +52,8 @@ const App = (props) => {
                     <Header/>
                     <div className='app-wrapper'>
                         <Navbar
-                            stateData={props.state.navigationBar}
-                            stateAvatar={props.state.avatarBase}/>
+                            stateData={props.state.sideBar}
+                            />
                         <div className='app-wrapper-content'>
                             <Routes>
                                 <Route path="/profile"

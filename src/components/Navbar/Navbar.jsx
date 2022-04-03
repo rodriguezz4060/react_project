@@ -9,8 +9,7 @@ const Navbar = (props) => {
         </div>
     )
 
-    let UserAvatars = props.stateAvatar.Avatars.map(ava => <img src={ava.avtrUsr}/>)
-
+    let UserAvatars = props.stateData.Avatars.map(ava => <img src={ava.avtrUsr}/>)
 
     return (
         <nav className={stl.nav}>
