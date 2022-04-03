@@ -2,24 +2,22 @@ import React from 'react';
 import stl from './Dialogs.module.css';
 import DialogsFiends from "./DialogsFiends/DialogsFiends";
 import MessageFiends from "./Messages/Messages";
-import {addMessageActionCreator, updateNewMessageText} from "../../Redux/messages-reduscer";
-
 
 const Dialogs = (props) => {
 
-    let dialogElement = props.stateData.dialogsData.map(
+    let dialogElement = props.dialogsData.map(
         d => <DialogsFiends name={d.name} id={d.id}/>)
-    let messagesElement = props.stateData.messagesData.map(m => <MessageFiends msg={m.msg}/>)
+    let messagesElement = props.messagesData.map(m => <MessageFiends msg={m.msg}/>)
 
     /*Добавление сообщений*/
 
-    let addMessages = () => {
-        props.dispatch(addMessageActionCreator());
+    let onAddMessages = () => {
+        props.addMessages();
     }
 
     let onMessageChange = (el) => {
         let text = el.target.value;
-        props.dispatch(updateNewMessageText(text));
+        props.MessageText(text);
     }
 
     return (
@@ -33,10 +31,10 @@ const Dialogs = (props) => {
                 </div>
                 <div>
                     <textarea placeholder='Type you message' onChange={onMessageChange}
-                              value={props.stateData.NewMessageText}/>
+                              value={props.NewMessageText}/>
                 </div>
                 <div>
-                    <button onClick={addMessages}>Send</button>
+                    <button onClick={onAddMessages}>Send</button>
                 </div>
             </div>
         </div>

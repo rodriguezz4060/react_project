@@ -1,7 +1,7 @@
 import React from 'react';
-import MyPost from './MyPost/MyPost';
 import stl from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/Profileinfo";
+import MyPostContainer from "./MyPost/MyPostContainer";
 
 
 const Profile = (props) => {
@@ -10,9 +10,7 @@ debugger;
         <div className={stl.profileWrapper}>
             <ProfileInfo/>
             <div>
-                <MyPost postsData={props.stateData.postsData}
-                        dispatch={props.dispatch}
-                        NewPostText={props.stateData.NewPostText}
+                <MyPostContainer store={props.store}
                 />
             </div>
         </div>
