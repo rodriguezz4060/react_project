@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import messagesReducer from "./messages-reduscer";
+
+
 let store = {
     _state: {
         profilePage: {
@@ -6,7 +10,7 @@ let store = {
                 {id: 2, msg: 'Hi its my first post', likeCount: 15},
                 {id: 3, msg: 'My first post', likeCount: 11}
             ],
-            NewPostText: 'ReactProject'
+            NewPostText: ''
         },
         messagesPage: {
             dialogsData: [
@@ -20,7 +24,7 @@ let store = {
                 {id: 2, msg: 'hi hi hi wasap'},
                 {id: 3, msg: 'props is nice'}
             ],
-            NewMessageText: 'simpletext'
+            NewMessageText: ''
         },
         navigationBar: {
             Navigation: [
@@ -51,46 +55,20 @@ let store = {
     getState() {
         return this._state;
     },
-
-/*Обработчик набора сообщений в Profile*/
     _callSubscriber() {
     },
-
-    addPost() {
-        let newPost = {
-            id: 5,
-            msg: this._state.profilePage.NewPostText,
-            likeCount: 0
-        };
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.NewPostText = '';
-        this._callSubscriber(this._state);
-    },
-
-    updateNewPostText(newText) {
-        this._state.profilePage.NewPostText = newText;
-        this._callSubscriber(this._state);
-    },
-
-/*Обработчик набора сообщений в dialogs*/
-
-    addMessage() {
-        let newMessage = {
-            id: 4,
-            msg: this._state.messagesPage.NewMessageText,
-        };
-        this._state.messagesPage.messagesData.push(newMessage);
-        this._state.messagesPage.NewMessageText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewMessageText(newText) {
-        this._state.messagesPage.NewMessageText = newText;
-        this._callSubscriber(this._state);
-    },
-
     /*ипорт ререндера*/
     subscriber(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        /*Обработчик набора сообщений в PROFILE*/
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        /*Обработчик набора сообщений в dialogs*/
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+
+        this._callSubscriber(this._state);
+
     }
 }
 

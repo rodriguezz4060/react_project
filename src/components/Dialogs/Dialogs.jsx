@@ -2,6 +2,8 @@ import React from 'react';
 import stl from './Dialogs.module.css';
 import DialogsFiends from "./DialogsFiends/DialogsFiends";
 import MessageFiends from "./Messages/Messages";
+import {addMessageActionCreator, updateNewMessageText} from "../../Redux/messages-reduscer";
+
 
 const Dialogs = (props) => {
 
@@ -11,15 +13,13 @@ const Dialogs = (props) => {
 
     /*Добавление сообщений*/
 
-    let newMessagesElement = React.createRef();
-
     let addMessages = () => {
-        props.addMessage();
+        props.dispatch(addMessageActionCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessagesElement.current.value;
-        props.updateNewMessageText(text);
+    let onMessageChange = (el) => {
+        let text = el.target.value;
+        props.dispatch(updateNewMessageText(text));
     }
 
     return (
@@ -32,7 +32,7 @@ const Dialogs = (props) => {
                     {messagesElement}
                 </div>
                 <div>
-                    <textarea onChange={onMessageChange} ref={newMessagesElement}
+                    <textarea placeholder='Type you message' onChange={onMessageChange}
                               value={props.stateData.NewMessageText}/>
                 </div>
                 <div>

@@ -8,7 +8,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {addPost} from "./Redux/State";
+import {addPost} from "./Redux/store";
 
 
 class ErrorBoundary extends React.Component {
@@ -61,14 +61,12 @@ const App = (props) => {
                                 <Route path="/profile"
                                        element={<Profile
                                            stateData={props.state.profilePage}
-                                           addPost={props.addPost}
-                                           updateNewPostText={props.updateNewPostText}
+                                           dispatch={props.dispatch}
                                        />}/>
                                 <Route path="/dialogs/*"
                                        element={<Dialogs
                                            stateData={props.state.messagesPage}
-                                           updateNewMessageText={props.updateNewMessageText}
-                                           addMessage={props.addMessage}
+                                           dispatch={props.dispatch}
                                        />}/>
                                 <Route path="/news"
                                        element={<News/>}/>

@@ -77,6 +77,15 @@
     position: relative;
 }
 
+.bubbleUsersActive {
+    border-color: #FFFFFF;
+    border-radius: 10px;
+    background: #cad8d0;
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+}
+
 .avatar img{
     width: 50px;
     border-radius: 30px;
