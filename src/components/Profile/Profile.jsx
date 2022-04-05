@@ -4,14 +4,12 @@ import ProfileInfo from "./ProfileInfo/Profileinfo";
 import MyPostContainer from "./MyPost/MyPostContainer";
 
 
-const Profile = (props) => {
-debugger;
+const Profile = () => {
     return (
         <div className={stl.profileWrapper}>
             <ProfileInfo/>
             <div>
-                <MyPostContainer store={props.store}
-                />
+                <MyPostContainer />
             </div>
         </div>
     )

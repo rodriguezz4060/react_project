@@ -1,13 +1,13 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import './App.css';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import NavbarContainer from "./components/Navbar/NavbarContiner";
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -43,27 +43,19 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-const App = (props) => {
-debugger;
+const App = () => {
     return (
         <ErrorBoundary>
-            <BrowserRouter>
                 <div className='wrappe'>
                     <Header/>
                     <div className='app-wrapper'>
-                        <Navbar
-                            stateData={props.state.sideBar}
-                            />
+                        <NavbarContainer />
                         <div className='app-wrapper-content'>
                             <Routes>
-                                <Route path="/profile"
-                                       element={<Profile
-                                           store={props.store}
-                                       />}/>
+                               <Route path="/profile"
+                                       element={<Profile />}/>
                                 <Route path="/dialogs/*"
-                                       element={<DialogsContainer
-                                           store={props.store}
-                                       />}/>
+                                       element={<DialogsContainer />}/>
                                 <Route path="/news"
                                        element={<News/>}/>
                                 <Route path="/music"
@@ -77,7 +69,6 @@ debugger;
                         &copy; Rodriguez project
                     </div>
                 </div>
-            </BrowserRouter>
         </ErrorBoundary>
     )
 }
