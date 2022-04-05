@@ -5,9 +5,11 @@ import MessageFiends from "./Messages/Messages";
 
 const Dialogs = (props) => {
 
-    let dialogElement = props.dialogsData.map(
+    let state = props.messagesPage;
+
+    let dialogElement = state.dialogsData.map(
         d => <DialogsFiends name={d.name} id={d.id}/>)
-    let messagesElement = props.messagesData.map(m => <MessageFiends msg={m.msg}/>)
+    let messagesElement = state.messagesData.map(m => <MessageFiends msg={m.msg}/>)
 
     /*Добавление сообщений*/
 
@@ -17,7 +19,7 @@ const Dialogs = (props) => {
 
     let onMessageChange = (el) => {
         let text = el.target.value;
-        props.MessageText(text);
+        props.updateNewMessage(text);
     }
 
     return (
@@ -31,7 +33,7 @@ const Dialogs = (props) => {
                 </div>
                 <div>
                     <textarea placeholder='Type you message' onChange={onMessageChange}
-                              value={props.NewMessageText}/>
+                              value={state.NewMessageText}/>
                 </div>
                 <div>
                     <button onClick={onAddMessages}>Send</button>
