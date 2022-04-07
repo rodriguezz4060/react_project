@@ -3,24 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    usersData: [
-        {
-            id: 1,
-            profileImg: 'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51402215-stock-illustration-male-avatar-profile-picture-use.jpg',
-            followed: true,
-            fullName: 'Igor S.',
-            status: 'my status',
-            location: {country: 'Ukraine', city: 'Odessa'}
-        },
-        {
-            id: 2,
-            profileImg: 'https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51402215-stock-illustration-male-avatar-profile-picture-use.jpg',
-            followed: false,
-            fullName: 'NeIgor S.',
-            status: 'Ne my status',
-            location: {country: 'Ukraine', city: 'Kiev'}
-        },
-    ],
+    usersData: []
 };
 
 const usersReducer = (state = initialState, action) => {
