@@ -3,7 +3,7 @@ import stl from './../Navbar.module.css'
 
 const MyFriends = (props) => {
 
-    let UserAvatars = props.stateData.Avatars.map(ava => <img src={ava.avtrUsr}/>)
+    let UserAvatars = props.stateData.Avatars.map(ava => <img src={ava.avtrUsr} key={ava.id}/>)
 
     return (
         <div>

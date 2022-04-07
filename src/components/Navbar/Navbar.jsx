@@ -5,8 +5,8 @@ import MyFriends from "./MyFriends/MyFriends";
 
 const Navbar = (props) => {
 
-    let Navigate = props.stateData.Navigation.map(nvg => <div>
-            <NavLink to={nvg.path} className={navData => navData.isActive ? stl.active : stl.item}>{nvg.name} </NavLink>
+    let Navigate = props.stateData.Navigation.map(nvg => <div key={nvg.id}>
+            <NavLink to={nvg.path} className={navData => navData.isActive ? stl.active : stl.item}>{nvg.name}</NavLink>
         </div>
     )
 
