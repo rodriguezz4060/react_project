@@ -19,23 +19,18 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
     /*Обработчик набора сообщений в dialogs*/
     switch (action.type) {
-        case ADD_MESSAGES: {
-            let newMessage = {
-                id: 4,
-                msg: state.NewMessageText,
-            }
+        case ADD_MESSAGES:
+            let newMessage = state.NewMessageText;
             return {
                 ...state,
-                messagesData: [...state.messagesData, newMessage],
+                messagesData: [...state.messagesData, { id: 4, msg: newMessage}],
                 NewMessageText: ''
             };
-        }
-        case UPDATE_NEW_MESSAGE_TEXT: {
+        case UPDATE_NEW_MESSAGE_TEXT:
             return {
                 ...state,
                 NewMessageText: action.newText
             };
-        }
         default:
             return state;
     }

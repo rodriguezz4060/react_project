@@ -8,6 +8,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavbarContainer from "./components/Navbar/NavbarContiner";
+import UsersContainer from "./components/Users/UsersContainer";
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -46,29 +47,31 @@ class ErrorBoundary extends React.Component {
 const App = () => {
     return (
         <ErrorBoundary>
-                <div className='wrappe'>
-                    <Header/>
-                    <div className='app-wrapper'>
-                        <NavbarContainer />
-                        <div className='app-wrapper-content'>
-                            <Routes>
-                               <Route path="/profile"
-                                       element={<Profile />}/>
-                                <Route path="/dialogs/*"
-                                       element={<DialogsContainer />}/>
-                                <Route path="/news"
-                                       element={<News/>}/>
-                                <Route path="/music"
-                                       element={<Music/>}/>
-                                <Route path="/settings"
-                                       element={<Settings/>}/>
-                            </Routes>
-                        </div>
-                    </div>
-                    <div className='footer'>
-                        &copy; Rodriguez project
+            <div className='wrappe'>
+                <Header/>
+                <div className='app-wrapper'>
+                    <NavbarContainer/>
+                    <div className='app-wrapper-content'>
+                        <Routes>
+                            <Route path="/profile"
+                                   element={<Profile/>}/>
+                            <Route path="/dialogs/*"
+                                   element={<DialogsContainer/>}/>
+                            <Route path="/users"
+                                   element={<UsersContainer/>}/>
+                            <Route path="/news"
+                                   element={<News/>}/>
+                            <Route path="/music"
+                                   element={<Music/>}/>
+                            <Route path="/settings"
+                                   element={<Settings/>}/>
+                        </Routes>
                     </div>
                 </div>
+                <div className='footer'>
+                    &copy; Rodriguez project
+                </div>
+            </div>
         </ErrorBoundary>
     )
 }
